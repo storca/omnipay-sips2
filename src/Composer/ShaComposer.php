@@ -25,7 +25,7 @@ class ShaComposer implements ComposerInterface
     {
         $parameterComposer = new ParameterComposer();
         $parametersString = $parameterComposer->compose($parameters);
-
-        return hash('sha256', utf8_encode($parametersString . $this->secretKey));
+        
+        return hash_hmac('sha256', utf8_encode($parametersString), utf8_encode($this->secretKey));
     }
 }
