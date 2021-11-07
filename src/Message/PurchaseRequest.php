@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnipay\SipsPayPage\Message;
+namespace Omnipay\Sogenactif\Message;
 
-use Omnipay\SipsPayPage\Composer\ShaComposer;
-use Omnipay\SipsPayPage\Composer\ParameterComposer;
-use Omnipay\SipsPayPage\Normalizer;
+use Omnipay\Sogenactif\Composer\ShaComposer;
+use Omnipay\Sogenactif\Composer\ParameterComposer;
+use Omnipay\Sogenactif\Normalizer;
 
 class PurchaseRequest extends AbstractRequest
 {

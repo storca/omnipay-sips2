@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\SipsPayPage\Composer;
+namespace Omnipay\Sogenactif\Composer;
 
 class ParameterComposer implements ComposerInterface
 {

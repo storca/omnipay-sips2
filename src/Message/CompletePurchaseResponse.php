@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\SipsPayPage\Message;
+namespace Omnipay\Sogenactif\Message;
 
 use Omnipay\Common\Exception\InvalidResponseException;
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
-use Omnipay\SipsPayPage\Composer\ShaComposer;
+use Omnipay\Sogenactif\Composer\ShaComposer;
 
 class CompletePurchaseResponse extends AbstractResponse
 {

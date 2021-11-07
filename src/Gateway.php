@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\SipsPayPage;
+namespace Omnipay\Sogenactif;
 
 use Omnipay\Common\AbstractGateway;
 
@@ -114,7 +114,7 @@ class Gateway extends AbstractGateway
      */
     public function getName()
     {
-        return 'SipsPayPage';
+        return 'Sogenactif';
     }
 
     /**
@@ -128,7 +128,7 @@ class Gateway extends AbstractGateway
      */
     public function purchase(array $options = array())
     {
-        return $this->createRequest('\Omnipay\SipsPayPage\Message\PurchaseRequest', $options);
+        return $this->createRequest('\Omnipay\Sogenactif\Message\PurchaseRequest', $options);
     }
 
     /**
@@ -141,7 +141,7 @@ class Gateway extends AbstractGateway
      */
     public function completePurchase(array $options = array())
     {
-        return $this->createRequest('\Omnipay\SipsPayPage\Message\CompletePurchaseRequest', $options);
+        return $this->createRequest('\Omnipay\Sogenactif\Message\CompletePurchaseRequest', $options);
     }
 
     public function supportsRefund()

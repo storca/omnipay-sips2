@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\SipsPayPage\Message;
+namespace Omnipay\Sogenactif\Message;
 
 class CompletePurchaseRequest extends AbstractRequest
 {

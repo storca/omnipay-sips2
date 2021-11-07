@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\SipsPayPage;
+namespace Omnipay\Sogenactif;
 
 use Omnipay\Common\CreditCard;
 use Omnipay\Common\Exception\InvalidCreditCardException;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\SipsPayPage;
+namespace Omnipay\Sogenactif;
 
 abstract class Normalizer
 {
