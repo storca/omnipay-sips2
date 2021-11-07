@@ -283,7 +283,7 @@ class PurchaseRequest extends AbstractRequest
         'customerContact', 'customerContact.email', 'customerContact.firstname',
         'customerContact.gender', 'customerContact.lastname', 'customerContact.mobile',
         'customerContact.phone', 'customerContact.title', 'expirationDate', 'automaticResponseUrl',
-        'templateName', 'paymentMeanBrandList', 'orderId'
+        'templateName', 'paymentMeanBrandList', 'orderId', 'responseEncoding'
     );
 
     public static function getCurrencies()
@@ -432,10 +432,23 @@ class PurchaseRequest extends AbstractRequest
         $shaComposer = new ShaComposer($this->getParameter('secretKey'));
         $parameterComposer = new ParameterComposer();
 
+        $composedData = $parameterComposer->compose($data);
+
+        if($this->getEncoding() == 'base64')
+        {
+            $dataField = base64_encode($composedData);
+        }
+        else
+        {
+            $dataField = $composedData;
+        }
+
         return new PurchaseResponse($this, [
-            'Data' => $parameterComposer->compose($data),
+            'Data' => $dataField,
             'InterfaceVersion' => $this->getParameter('interfaceVersion'),
             'Seal' => $shaComposer->compose($data),
+            'Encode' => $this->getEncoding(),
+            'SealAlgorithm' => $this->getSealAlgorithm()
         ]);
     }
 }

@@ -39,7 +39,23 @@ class CompletePurchaseResponse extends AbstractResponse
         }
 
         $this->seal = $data['Seal'];
-        $this->composedData = $data['Data'];
+        if(!empty($data['Encode']))
+        {
+            if($data['Encode'] == 'base64')
+            {
+                $decodedComposedData = base64_decode($data['Data']);
+            }
+            else
+            {
+                throw new InvalidResponseException('Invalid response encoding for Data POST field (not base64)');
+            }
+        }
+        else
+        {
+            $decodedComposedData = $data['Data'];
+        }
+        
+        $this->composedData = $decodedComposedData;
         $this->fields = $this->decomposeData();
     }
 

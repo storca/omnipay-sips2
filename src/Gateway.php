@@ -17,7 +17,9 @@ class Gateway extends AbstractGateway
             'keyVersion' => 1,
             'secretKey' => '002001000000001_KEY1',
             'url' => 'https://payment-webinit.simu.sips-atos.com',
-            'sealAlgorithm' => 'HMAC-SHA-256'
+            'sealAlgorithm' => 'HMAC-SHA-256',
+            'responseEncoding' => 'base64',
+            'encoding' => 'base64'
         );
     }
 

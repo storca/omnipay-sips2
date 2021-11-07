@@ -6,7 +6,7 @@ class ParameterComposer implements ComposerInterface
 {
     /**
      * @param array $parameters
-     * @return string
+     * @return string base64-encoded
      */
     public function compose(array $parameters)
     {

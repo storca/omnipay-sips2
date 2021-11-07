@@ -1,13 +1,13 @@
 {
-    "name": "ambroisemaupate/omnipay-sips2",
+    "name": "storca/omnipay-sips2",
     "description": "Omnipay gateway for Worldline Sips PayPage POST API (Atos Sips 2.0)",
     "type": "library",
     "license": "MIT",
-    "homepage": "https://github.com/ambroisemaupate/omnipay-sips2",
+    "homepage": "https://github.com/storca/omnipay-sips2",
     "authors": [
         {
-            "name": "Ambroise Maupate",
-            "email": "ambroise@rezo-zero.com"
+            "name": "Storca",
+            "email": "storca@mail.com"
         }
     ],
     "keywords": [
