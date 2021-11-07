@@ -24,7 +24,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Omnipay\\SipsPayPage\\": "src/"
+            "Omnipay\\Sogenactif\\": "src/"
         }
     },
     "require": {
