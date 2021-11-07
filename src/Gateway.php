@@ -143,4 +143,39 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\SipsPayPage\Message\CompletePurchaseRequest', $options);
     }
+
+    public function supportsRefund()
+    {
+        return false;
+    }
+
+    public function supportsAuthorize()
+    {
+        return false;
+    }
+
+    public function supportsCapture()
+    {
+        return false;
+    }
+
+    public function supportsAcceptNotification()
+    {
+        return false;
+    }
+
+    public function supportsFetchTransaction()
+    {
+        return false;
+    }
+
+    public function supportsCompleteAuthorize()
+    {
+        return false;
+    }
+
+    public function supportsCompletePurchase()
+    {
+        return true;
+    }
 }
