@@ -127,7 +127,7 @@ class CompletePurchaseResponse extends AbstractResponse
      */
     public function getSealFromData()
     {
-        $shaComposer = new ShaComposer($this->request->getSecretKey());
+        $shaComposer = new ShaComposer($this->request->getSecretKey(), $this->request->getEncoding());
         return $shaComposer->compose($this->fields);
     }
 

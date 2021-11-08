@@ -29,6 +29,30 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
+     * Encoding for Data POST field
+     * @return
+     */
+    public function getEncoding()
+    {
+        return $this->getParameter('encoding');
+    }
+
+    public function setEncoding($value)
+    {
+        return $this->setParameter('encoding', $value);
+    }
+
+    public function getSealAlgorithm()
+    {
+        return $this->getParameter('sealAlgorithm');
+    }
+
+    public function setSealAlgorithm($value)
+    {
+        return $this->setParameter('sealAlgorithm', $value);
+    }
+
+    /**
      * @return mixed
      */
     public function getMerchantId()
