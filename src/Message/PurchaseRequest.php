@@ -317,10 +317,11 @@ class PurchaseRequest extends AbstractRequest
             'normalReturnUrl' => $this->getReturnUrl(),
             'automaticResponseUrl' => $this->getNotifyUrl(),
             'orderId' => $this->getTransactionId(),
+            'transactionReference' => $this->getTransactionReference(),
             'amount' => $this->getAmountInteger(),
         ]);
 
-        return array_filter($data);
+        return array_filter($data); //remove all the null values in $data
     }
 
     /**
@@ -404,6 +405,24 @@ class PurchaseRequest extends AbstractRequest
          * If country is empty or a valid 3-letter code.
          */
         return $country;
+    }
+
+    /**
+     * Generate a unique id for the transaction with both uniqid() and random_bytes()
+     * The unique ID is 15 characters long : T is a character refereing to time, R is a random character
+     * The generated ID is url-friendly
+     * format : TTTTTTTTTTTTTRR
+     * 
+     * @return unique ID based on time and random
+     */
+    public function getTransactionReference()
+    {
+        $ref = uniqid();
+        $ran_string = base64_encode(random_bytes(random_int(6,8)));
+        $ran_string = preg_replace('/[^a-z0-9\s\-]/i', '', $ran_string);
+        $ran_string = substr($ran_string, 1, 2);
+        $ref = $ref . $ran_string;
+        return $ref;
     }
 
     /**

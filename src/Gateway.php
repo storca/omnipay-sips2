@@ -131,6 +131,7 @@ class Gateway extends AbstractGateway
         return $this->createRequest('\Omnipay\Sogenactif\Message\PurchaseRequest', $options);
     }
 
+
     /**
      * Handles a response from the payment gateway
      * Usually a notification a success, a cancellation or
