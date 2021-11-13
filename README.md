@@ -1,6 +1,6 @@
 # Omnipay gateway for Worldline (Atos) Sips 2.0
 
-This gateway implements *Sips PayPage POST API* only.
+This gateway implements *Sogenactif's Sips PayPage POST API* only.
 
 ## Gateway parameters
 
@@ -21,7 +21,7 @@ Be careful, in *test* mode, `transactionReference` parameter is mandatory.
 ### First step: offsite payment
 
 ```php
-$gateway = \Omnipay\Omnipay::create('SipsPayPage');
+$gateway = \Omnipay\Omnipay::create('Sogenactif');
 $gateway->setMerchantId('XXXXXXXXXXXXXXXXX');
 $gateway->setSecretKey('XXXXXXXXXXXXXXXXX');
 $gateway->setUrl('https://payment-webinit.simu.sips-atos.com');
@@ -51,7 +51,7 @@ if ($response->isRedirect()) {
 ### Second step: manual and automatic response
 
 ```php
-$gateway = \Omnipay\Omnipay::create('SipsPayPage');
+$gateway = \Omnipay\Omnipay::create('Sogenactif');
 $gateway->setMerchantId('XXXXXXXXXXXXXXXXX');
 $gateway->setSecretKey('XXXXXXXXXXXXXXXXX');
 $gateway->setUrl('https://payment-webinit.simu.sips-atos.com');
